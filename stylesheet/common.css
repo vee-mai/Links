@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root{
+	--h1-main-font:"Press Start 2P", serif;
+	--h1-size-mobile:20px;
+	--h2-size-mobile:15px;
+	--h1-desktop: 30px;
+	--h2-desktop: 20px;
+	--h3-desktop: 10px;
+}
+
+<!-- Modified from https://jdan.github.io/98.css/ -->
+/* made changes include:orginally was svg-load file --> Url. changed class name */
+.window {
+	box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee,
+		inset -3px -3px #003bda, inset 3px 3px #0855dd;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding: 0 0 3px 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+.popup-title{
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	background: linear-gradient(
+		180deg,
+		rgba(9, 151, 255, 1) 0%,
+		rgba(0, 83, 238, 1) 8%,
+		rgba(0, 80, 238, 1) 40%,
+		rgba(0, 102, 255, 1) 88%,
+		rgba(0, 102, 255, 1) 93%,
+		rgba(0, 91, 255, 1) 95%,
+		rgba(0, 61, 215, 1) 96%,
+		rgba(0, 61, 215, 1) 100%
+	);
+	padding:0.7rem;
+	border-top: 1px solid #0831d9;
+	border-left: 1px solid #0831d9;
+	border-right: 1px solid #001ea0;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 2rem;
+}
+
+.title-bar{
+display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.title-bar-text {
+	font-size:20px;
+	padding-left: 3px;
+}
+
+.title-bar-controls {
+	button[aria-label="Minimize"] {
+		background-image:url("../assets/minimize.svg");
+		background-repeat: no-repeat;
+		background-position: bottom 3px left 4px;
+	}
+	button[aria-label="Maximize"] {
+		background-image:url("../assets/maximize.svg");
+		background-repeat: no-repeat;
+		background-position: top 2px left 3px;
+	}
+	button[aria-label="Close"] {
+		margin-left: 2px;
+		background-image:url("../assets/close.svg");
+		background-repeat: no-repeat;
+		background-position: top 3px left 4px;
+	}
+}
+
+p{
+	font-size:20px;
+	display: block;
+	max-width:50rem;
+	line-height:1.5;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

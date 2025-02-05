@@ -1,0 +1,7 @@
+:root{
+	--background-homepage:linear-gradient(90deg, rgba(88,45,96,1) 11%, rgba(170,88,169,1) 33%, rgba(194,90,190,1) 53%, rgba(143,153,235,1) 75%, rgba(0,212,255,1) 100%);
+}
+
+body{
+	background:var(--background-homepage);
+}
