@@ -9,7 +9,7 @@
 	--h3-desktop: 10px;
 }
 
-<!-- Modified from https://jdan.github.io/98.css/ -->
+/* <!-- Modified from https://jdan.github.io/98.css/ --> */
 /* made changes include:orginally was svg-load file --> Url. changed class name */
 .window {
 	box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee,
