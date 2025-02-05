@@ -7,6 +7,7 @@
 	--h1-desktop: 30px;
 	--h2-desktop: 20px;
 	--h3-desktop: 10px;
+	background-color:beige;
 }
 
 h1{
@@ -37,6 +38,7 @@ section:last-child img{
 /* <!-- Modified from https://jdan.github.io/98.css/ --> */
 /* made changes include:orginally was svg-load file --> Url. changed class name */
 .window {
+	margin-top:17rem;
 	box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee,
 		inset -3px -3px #003bda, inset 3px 3px #0855dd;
 	border-top-left-radius: 8px;
@@ -78,6 +80,7 @@ display: block;
 }
 
 .title-bar-text {
+	font-family:var(--h1-main-font);
 	font-size:20px;
 	padding-left: 3px;
 }
@@ -85,24 +88,22 @@ display: block;
 .title-bar-controls {
 	button[aria-label="Minimize"] {
 		background-image:url("../assets/minimize.svg");
-		background-repeat: no-repeat;
 		background-position: bottom 3px left 4px;
 	}
 	button[aria-label="Maximize"] {
 		background-image:url("../assets/maximize.svg");
-		background-repeat: no-repeat;
 		background-position: top 2px left 3px;
 	}
 	button[aria-label="Close"] {
-		margin-left: 2px;
 		background-image:url("../assets/close.svg");
-		background-repeat: no-repeat;
 		background-position: top 3px left 4px;
 	}
 }
 
 p{
-	font-size:20px;
+	font-family:var(--h1-main-font);
+	font-size:17px;
+	padding:1rem;
 	display: block;
 	max-width:50rem;
 	line-height:1.5;
@@ -110,4 +111,14 @@ p{
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+
+.enter-button{
+	font-family:var(--h1-main-font);
+	font-size:14px;
+	background-color:grey;
+	padding:0.5rem;
+	border-radius:0.3rem;
+	outline-style: solid 2px black;
+
 }
