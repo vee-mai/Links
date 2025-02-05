@@ -9,6 +9,33 @@
 	--h3-desktop: 10px;
 }
 
+h1{
+	font-family:var(--h1-main-font);
+	font-size:var(--h1-size-mobile);
+	padding:1rem;
+	border-bottom: 1.5px solid black;
+}
+
+section{
+	background-color:grey;
+	width:100%;
+	height:100%;
+}
+
+img{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+section:last-child img{
+	object-fit: cover;
+	object-position: right center;
+	overflow; clip;
+}
+
+
+
 /* <!-- Modified from https://jdan.github.io/98.css/ --> */
 /* made changes include:orginally was svg-load file --> Url. changed class name */
 .window {
@@ -21,6 +48,7 @@
 }
 
 .popup-title{
+	display:flex;
 	font-family: "Trebuchet MS";
 	font-size: 14px;
 	background: linear-gradient(
@@ -75,6 +103,9 @@ display: block;
 	}
 }
 
+img{
+	height:20px;
+}
 p{
 	font-size:20px;
 	display: block;
