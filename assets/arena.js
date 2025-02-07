@@ -83,7 +83,7 @@ let renderBlock = (block) => {
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
-	}
+	
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
