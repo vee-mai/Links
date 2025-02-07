@@ -145,6 +145,7 @@ p{
 	flex-direction:row;
 }
 
+
 @media (min-width:1280px){
 .popup-close{
 	font-family:var(--primary-font);

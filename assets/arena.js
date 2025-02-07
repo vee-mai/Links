@@ -1,3 +1,9 @@
+// closing pop-up
+// document.getElementById('popup-close').onclick = function() {
+// 	alert('click');
+// }
+
+
 // This allows us to process/render the descriptions, which are in Markdown!
 // More about Markdown: https://en.wikipedia.org/wiki/Markdown
 let markdownIt = document.createElement('script')
