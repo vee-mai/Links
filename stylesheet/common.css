@@ -1,30 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 :root{
-	--h1-main-font:"Press Start 2P", serif;
-	--h1-size-mobile:20px;
-	--h2-size-mobile:15px;
-	--h1-desktop: 30px;
-	--h2-desktop: 20px;
-	--h3-desktop: 10px;
-	background-color:beige;
+	/* typefaces */
+	--primary-font:"Press Start 2P", serif;
+	--secondary-font:"Roboto Mono",monospace;
+
+	/* mobile typeface sizes */
+	--h1-mobile:20px;
+	--h2-mobile:15px;
+	--h3-mobile:15px;
+
+	/* desktop typeface sizes */
+	--h1-desktop:30px;
+	--h2-desktop:20px;
+	--h3-desktop:10px;
+	
+	/* colors */
+	--beige:antiquewhite;
+	--white:white;
+	--dark-black:#121212;
+
+	/* padding */
+	--padding-s:0.5rem;
+	--padding-m:1rem;
+
+	/* border */
+	--border: 1.5px solid #121212;
+}
+
+body{
+	background-color:var(--beige);
 }
 
 h1{
-	font-family:var(--h1-main-font);
+	font-family:var(--primary-font);
 	font-size:var(--h1-size-mobile);
-	padding:1rem;
-	border-bottom: 1.5px solid black;
-}
-
-.flex-folder-container{
-	display:flex;
-	gap:2rem;
-}
-
-.media-folders{
-	height:100px;
-	width:100px;
+	padding:var(--padding-m);
+	border-bottom:var(--border);
+	text-align:center;
 }
 
 section{
@@ -37,81 +52,77 @@ img{
 	display:block;
 }
 
-section:last-child img{
-	object-fit: cover;
-	object-position: right center;
-	overflow; clip;
+.top-nav{
+	background-color:var(--beige);
 }
 
-
-
-/* <!-- Modified from https://jdan.github.io/98.css/ --> */
-/* made changes include:orginally was svg-load file --> Url. changed class name */
-.window {
-	margin-top:17rem;
-	box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee,
-		inset -3px -3px #003bda, inset 3px 3px #0855dd;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	padding: 0 0 3px 0;
-	-webkit-font-smoothing: antialiased;
+/* folder */
+.folders{
+	font-family:var(--secondary-font);
+	font-size:14px;
+	padding:0.5rem;
+	border:none;
 }
 
-.popup-title{
+.flex-folder-container{
 	display:flex;
-	font-family: "Trebuchet MS";
-	font-size: 14px;
-	background: linear-gradient(
-		180deg,
-		rgba(9, 151, 255, 1) 0%,
-		rgba(0, 83, 238, 1) 8%,
-		rgba(0, 80, 238, 1) 40%,
-		rgba(0, 102, 255, 1) 88%,
-		rgba(0, 102, 255, 1) 93%,
-		rgba(0, 91, 255, 1) 95%,
-		rgba(0, 61, 215, 1) 96%,
-		rgba(0, 61, 215, 1) 100%
-	);
-	padding:0.7rem;
-	border-top: 1px solid #0831d9;
-	border-left: 1px solid #0831d9;
-	border-right: 1px solid #001ea0;
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	height: 2rem;
+	gap:2rem;
 }
 
-.title-bar{
-display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.media-folders{
+	background-image: url(../assets/1.png);
+	width: 100px;
+	height:100px;
+	background-size: contain;
+	background-position: center;
 }
 
-.title-bar-text {
-	font-family:var(--h1-main-font);
-	font-size:20px;
-	padding-left: 3px;
+.media-folders:hover{
+	background-image: url(../assets/2.png);
 }
 
-.title-bar-controls {
-	button[aria-label="Minimize"] {
-		background-image:url("../assets/minimize.svg");
-		background-position: bottom 3px left 4px;
-	}
-	button[aria-label="Maximize"] {
-		background-image:url("../assets/maximize.svg");
-		background-position: top 2px left 3px;
-	}
-	button[aria-label="Close"] {
-		background-image:url("../assets/close.svg");
-		background-position: top 3px left 4px;
-	}
+/* popup message */
+.popup-container{
+	display:flex;
+	justify-content:center;
+}
+
+#popup-msg{
+	background-color:white;
+	border-radius:0.3rem;
+	width:95%;
+	border: 2px solid darkgrey;
+}
+
+.popup-bar{
+	background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+	display:flex;
+}
+
+.popup-text{
+	font-family:var(--primary-font);
+	font-size:var(--h1-size-mobile);
+	padding:var(--padding-s);
+	color:white;
+	width:95%;
+	padding:1rem;
+}
+
+.popup-close{
+	font-family:var(--primary-font);
+	font-size:18px;
+	color:white;
+	display:flex;
+	width:15%;
+	padding:1rem;
+}
+
+.window-body{
+	font-family:var(--secondary-font);
 }
 
 p{
-	font-family:var(--h1-main-font);
 	font-size:17px;
 	padding:1rem;
 	display: block;
@@ -123,12 +134,7 @@ p{
     margin-inline-end: 0px;
 }
 
-.enter-button{
-	font-family:var(--h1-main-font);
-	font-size:14px;
-	background-color:grey;
-	padding:0.5rem;
-	border-radius:0.3rem;
-	outline-style: solid 2px black;
 
-}
+
+
+

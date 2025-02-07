@@ -11,45 +11,44 @@
 	</head>
 
 	<body>
-		<h1>T&I</h1>
+		
+		<div class="top-nav">
+			<h1>T&I</h1>
+		</div>
+
+		<!-- sroll UI-->
+		<div class="vertical-scroll">
+			empty
+		</div>
 		
 		<section class="flex-folder-container">
-		<div class="folders">
-			<img class="media-folders" src="assets/folder.png">
-			<h2> Images</h2>
-		</div>
-
-		<div class="folders">
-			<img class="media-folders" src="assets/folder.png">
-			<h2> Images</h2>
-		</div>
-
-		<div class="folders">
-			<img class="media-folders" src="assets/folder.png">
-			<h2> Images</h2>
-		</div>
-
+			<div class="folders">
+				<img class="media-folders">
+				<a href="inside.html">Images</a>
+			</div>
+			<div class="folders">
+				<img class="media-folders">
+				<a href="inside.html">Videos</a>
+			</div>
+			<div class="folders">
+				<img class="media-folders">
+				<a href="inside.html">PDFs</a>
+			</div>
 		</section>
 
-		<!-- MOBILE-Pop-up time travel error message -->
-		<!-- Modified from https://jdan.github.io/98.css/ -->
-
-		<!-- Something I want to implement on the homepage -- basically user have to click onto the close button to view the next page which is the gallery of mediums
-		<div class="window" style="width: 400px"> 
-			<div class="popup-title">
-				<div class="title-bar-text">SYSTEM ERROR</div>
-				<div class="title-bar-controls">
-					<button aria-label="Minimize"></button>
-					<button aria-label="Maximize"></button>
-					<button aria-label="Close"><img src="assets/close.svg"></button>
+		<div class="popup-container">
+			<header id="popup-msg">
+				<div class="popup-bar">
+					<div class="popup-text">SYSTEM ERROR</div>
+					<div class="popup-close">X</div>
 				</div>
-			</div>
-			<div class="window-body">
-				<p> Something went wrong...We are initating an emergency time jump to the 2000s</p>
-			</div>
-			<div class="button">
-				<a href="inside.html" class="enter-button">Take me back now</a>
-			</div>
-		</div>  -->
+
+				<div class="window-body">
+					<p> This channel is a curated archive of the sights, sounds, and memories from the millennium.</p>
+
+					<p> It’s a nostalgic journey through time, capturing the essence of an era that feels both distant and familiar. Explore, reminisce, and connect with a time that feels like yesterday yet belongs to history.</p>
+				</div>
+			</header>
+		</div>
 	</body>
 </html>
