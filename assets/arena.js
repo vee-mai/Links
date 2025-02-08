@@ -3,18 +3,6 @@
 // 	alert('click');
 // }
 
-// cursor
-// modified from: https://codepen.io/developeraspire5/pen/gOGjeZG
-const cursorRounded = document.querySelector('.rounded');
-
-const moveCursor = (e)=> {
-	const mouseY = e.clientY;
-	const mouseX = e.clientX;
-
-	cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-}
-
-window.addEventListener('mousemove', moveCursor)
 
 // This allows us to process/render the descriptions, which are in Markdown!
 // More about Markdown: https://en.wikipedia.org/wiki/Markdown

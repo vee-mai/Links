@@ -5,3 +5,25 @@
 	position: relative;
 	height:10rem;
 }
+
+.projectScroll{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	overflow:auto;
+}
+
+.aboutProject{
+	padding:1rem;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.blocks{
+	display:flex;
+	flex-wrap:wrap;
+	align-items: center;
+	gap:5rem;
+	height:200px;
+}
