@@ -18,7 +18,7 @@
 	--h3-desktop:10px;
 	
 	/* colors */
-	--beige:antiquewhite;
+	--beige:rgb(234, 229, 223);
 	--white:white;
 	--dark-black:#121212;
 
@@ -35,10 +35,8 @@ body{
 }
 
 h1{
-	font-family:var(--primary-font);
+	font-family:var(--secondary-font);
 	font-size:var(--h1-size-mobile);
-	padding:var(--padding-m);
-	border-bottom:var(--border);
 	text-align:center;
 }
 
@@ -64,19 +62,36 @@ img{
 .flex-folder-container{
 	display:flex;
 	gap:2rem;
+	justify-content: center;
 }
 
+/* folder icon */
 .media-folders{
-	background-image: url(../assets/1.png);
-	width: 100px;
+	width: 80px;
 	height:80px;
-	background-size: contain;
-	background-position: center;
-	background-repeat:no-repeat;
 }
 
-.media-folders:hover{
-	background-image: url(../assets/2.png);
+img.media-folders{
+	.closed-folder{display: block}
+	.open-folder {display: none}
+
+	&:hover{
+		.closed-folder {display:none}
+		.open-folder{display: block}
+	}
+}
+
+.about{
+	display:flex;
+	align-items: center;
+	padding:1rem;
+	gap:0.5rem;
+	background-color:rgb(170, 170, 170);
+	
+}
+#info-icon{
+	width:20px;
+	height:20px;
 }
 
 .scroll{
@@ -114,6 +129,7 @@ img{
 	padding:1rem;
 }
 
+/* popup close button */
 .popup-close{
 	font-family:var(--primary-font);
 	font-size:18px;
@@ -123,30 +139,41 @@ img{
 	padding:1rem;
 }
 
-.window-body{
-	font-family:var(--secondary-font);
-}
-
 p{
 	font-size:17px;
 	padding:1rem;
 	display: block;
 	max-width:50rem;
 	line-height:1.5;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
 }
-
-
-#flex-container{
-	display:flex;
-	flex-direction:row;
-}
-
 
 @media (min-width:1280px){
+body{
+	background-image: url(../assets/window.png);
+	background-size:cover;
+}
+
+.footer{
+	background-color:beige;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+h2{
+	font-family:var(--secondary-font);
+	padding:0.7rem;
+}
+
+.popup-container{
+	width:40%;
+}
+
+
 .popup-close{
 	font-family:var(--primary-font);
 	font-size:18px;
@@ -156,10 +183,9 @@ p{
 	padding:1rem;
 }
 
+/* right scroll */
 .scroll{
 	position:fixed;
 	right:0;
 }
 }
-
-
