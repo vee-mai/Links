@@ -210,9 +210,34 @@ img.media-folders{
 }
 }
 @media (min-width:1280px){
+.popupPic{
+}
+/* .closed-folder:hover{
+	opacity: 0;
+}
+.open-folder{
+	opacity: 0;
+	position: relative;
+	top: -45%;
+}
+.open-folder:hover{
+	opacity: 100;
+	z-index: 1;
+} */
+/* 
+img.media-folders{
+	.closed-folder{display: block}
+	.open-folder {display: none}
+
+	&:hover{
+		.closed-folder {display:none}
+		.open-folder{display: block}
+	}
+}  */
+
 body{
 	background-image: url(../assets/window.png);
-	background-size:cover;
+	background-size:cover;	
 }
 
 .footer{
