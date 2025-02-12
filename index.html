@@ -4,46 +4,24 @@
 		<title>Project 4: Links</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="stylesheet/reset.css" rel="stylesheet">
-		<link href="stylesheet/common.css" rel="stylesheet">
 		<link href="stylesheet/main.css" rel="stylesheet">
 		<link href="assets" rel="stylesheet">
 		<script defer src="assets/arena.js"></script>
 	</head>
 
 	<body>
+		<!-- cursor -->
 		<div class="cursor rounded">
-		<img id="caution-icon" src="assets/cursor-1.png">
+			<img id="caution-icon" src="assets/cursor-1.png">
 		</div>
 		
-		<!--folders-->
-		<section class="flex-folder-container">
-			<div class="folders" id="picfolder">
-				<img class="media-folders closed-folder"  src="assets/1.png">
-				<img class="media-folders open-folder" open-folder 
-				src="assets/2.png">
-				<div>pictures</div>
-				<!-- <a href="inside.html">Images</a> -->
-			</div>
-			<div class="folders">
-				<img class="media-folders closed-folder"  src="assets/1.png">
-				<img class="media-folders open-folder " src="assets/2.png">
-				<a href="inside.html">Videos</a>
-			</div>
-			<div class="folders">
-				<img class="media-folders closed-folder"  src="assets/1.png">
-				<img class="media-folders open-folder"  src="assets/2.png">
-				<a href="inside.html">PDFs</a>
-			</div>
-		</section>
-
 		<!-- popup message -->
 		<div class="popup-container" id="popContainer">
 			<header id="popup-msg">
 				<div class="popup-bar">
-					<div class="popup-text">System Error</div>
+					<div class="popup-text">Quick Start Guide</div>
 					<div id="popup-close">X</div>
 				</div>
-
 				<div>
 					<img id="caution-icon" src="assets/caution.png">
 			
@@ -52,7 +30,42 @@
 					<p> It’s a nostalgic journey through time, capturing the essence of an era that feels both distant and familiar. Explore, reminisce, and connect with a time that feels like yesterday yet belongs to history.</p>
 				</div>
 			</header>
+		</div>
+
+	<!-- Main content (Hidden by default) -->
+		<!--folders-->
+		<section class="flex-folder-container" id="main-content">
+			<div class="folders" id="picfolder">
+				<img class="media-folders closed-folder"src="assets/picFolder.png">
+				<img class="media-folders open-folder" open-folder 
+				src="assets/open.png">
+				<div>Images</div>
+			</div>
+			<div class="folders">
+				<img class="media-folders closed-folder"  src="assets/vidFolder.png">
+				<img class="media-folders open-folder " src="assets/open.png">
+				<div>Videos</div>
+			</div>
+			<div class="folders">
+				<img class="media-folders closed-folder"  src="assets/SoundFolder.png">
+				<img class="media-folders open-folder"  src="assets/open.png">
+				<div>Sounds</div>
+			</div>
+			<div class="folders">
+				<img class="media-folders" src="assets/bin.png">
+			</div>
+			<div class="folders">
+				<img class="media-folders" src="assets/internet.png">
+			</div>
+		</section>
+
+		<!-- full-screen black overlay -->
+		<div id="overlay">	
+		</div>
+		
 		<div id="info-here"></div>
+
+		<!-- Minesweeper image -->
 		</div>
 		<img id="game-icon" src="assets/game.jpg">
 		<div>
@@ -71,5 +84,6 @@
 			</div>
 			
 		</footer>
+		
 	</body>
 </html>

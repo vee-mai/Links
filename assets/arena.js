@@ -5,12 +5,8 @@ let markdownIt = document.createElement('script')
 markdownIt.src = 'https://cdn.jsdelivr.net/npm/markdown-it@14.0.0/dist/markdown-it.min.js'
 document.head.appendChild(markdownIt)
 
-
-
 // Okay, Are.na stuff!
 let channelSlug = 'time-machine-5d-vxzzssb4' // The “slug” is just the end of the URL
-
-
 
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
@@ -27,8 +23,6 @@ let placeChannelInfo = (data) => {
 	// channelCount.innerHTML = data.length
 	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
-
-
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
@@ -151,7 +145,6 @@ let renderBlock = (block) => {
 }
 
 
-
 // It‘s always good to credit your work:
 let renderUser = (user, container) => { // You can have multiple arguments for a function!
 	let userAddress =
@@ -164,7 +157,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 		`
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
-
 
 
 // Now that we have said what we can do, go get the data:
@@ -187,31 +179,34 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	})
 
 
-// const picfolder = document.getElementById("picfolder")
-// picfolder.addEventListener("click",function(){
-// 	console.log("testing")
-// 	const infodiv = document.getElementById("info-here")
-// 	const mainWin = document.createElement("div")
-// 	mainWin.className = "popupPic";
-// 	mainWin.innerHTML = `
-// 			<header id="popup-msg">
-// 				<div class="popup-bar">
-// 					<div class="popup-text">Project</div>
-// 					<div id="popup-close">X</div>
-// 				</div>
+// opening folder to view blocks
+const picfolder = document.getElementById("picfolder")
+picfolder.addEventListener("click",function(){
+	console.log("testing")
+	const infodiv = document.getElementById("info-here")
+	const mainWin = document.createElement("div")
+	mainWin.className = "popupPic";
+	mainWin.innerHTML = `
+		<div class="popup-container" id="main-window">
+			<header id="popup-msg">
+				<div class="popup-bar">
+					<div class="popup-text">Project</div>
+					<div id="popup-close">X</div>
+				</div>
 
-// 				<div class="projectScroll">
-// 					<div class="aboutProject">
-// 						<p> Click on a project to learn more.</p>
-// 					</div>
-// 						<h1 id="channel-title"></h1>
-// 						<div id="channel-blocks"></div>
-// 						<div class="channel-users"> </div>
-// 					</div>
-// 			</header>
-// `;
-// 	infodiv.appendChild(mainWin)
-// })
+				<div class="projectScroll">
+					<div class="aboutProject">
+						<p> Click on a project to learn more.</p>
+					</div>
+						<h1 id="channel-title"></h1>
+						<div id="channel-blocks"></div>
+						<div class="channel-users"> </div>
+					</div>
+			</header>
+		</div>
+`;
+	infodiv.appendChild(mainWin)
+})
 
 // close popup
 const popup = document.getElementById("popup-close")
@@ -221,3 +216,7 @@ popup.addEventListener("click", function(){
 	popContainer.style.opacity = "0"
 })
 
+// cursor
+function myFunction (){
+	document.getElementById("popup-close").style.cursor="pointer";
+}
