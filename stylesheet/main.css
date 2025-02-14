@@ -4,7 +4,7 @@
 
 :root{
 	/* typefaces */
-	--primary-font:"times", serif;
+	--primary-font:"Press Start 2P", serif;
 	--secondary-font:"IBM Plex Serif", serif;
 
 	/* mobile typeface sizes */
@@ -49,10 +49,6 @@
 .rounded{
 	width:45px;
 	height:30px;
-}
-
-body{
-	background-color:var(--beige);
 }
 
 h1{
@@ -155,6 +151,7 @@ img.media-folders{
 .popup-container{
 	display:flex;
 	justify-content:center;
+	z-index:200;
 }
 
 #popup-msg{
@@ -200,6 +197,16 @@ img.media-folders{
 	display:none;
 }
 
+#black-screen{
+	background-color:black;
+	position:absolute;
+	height:100vh;
+	width:100vw;
+	top:0;
+	left:0;
+	z-index:100;
+}
+
 @media (min-width:750px){
 
 /* folder icon size */
@@ -214,8 +221,8 @@ img.media-folders{
 }
 @media (min-width:1280px){
 body{
-	background-image: url(../assets/window.png);
-	background-size:cover;	
+	background-color:#c0cac0;
+
 }
 
 h1{
@@ -227,9 +234,42 @@ h2{
 	font-family:var(--secondary-font);
 	padding:0.7rem;
 }
+
+h3{
+	font-family:var(--primary-font);
+	font-size:10px;
+	color:black;
+}
+
 footer{
 	position:absolute;
 	bottom:0;
+}
+
+/* folder open/close state */
+.media-folders.closed-folder {
+	display: block;
+}
+
+.media-folders.open-folder {
+	display: none;
+}
+
+.folders:hover .closed-folder {
+	display: none;
+}
+
+.folders:hover .open-folder {
+	display: block;
+}
+
+/* black-overlay */
+#black-screen{
+	background-color:black;
+	position:absolute;
+	height:100vh;
+	width:100vw;
+	z-index:150;
 }
 
 #game-icon{
@@ -272,7 +312,9 @@ footer{
 
 /* folder flex */
 .flex-folder-container{
-	gap:2rem;
+	display:flex;
+	flex-direction:column;
+	gap:1rem;
 	justify-content:left;
 }
 

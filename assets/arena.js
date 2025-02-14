@@ -179,44 +179,18 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	})
 
 
-// opening folder to view blocks
-const picfolder = document.getElementById("picfolder")
-picfolder.addEventListener("click",function(){
-	console.log("testing")
-	const infodiv = document.getElementById("info-here")
-	const mainWin = document.createElement("div")
-	mainWin.className = "popupPic";
-	mainWin.innerHTML = `
-		<div class="popup-container" id="main-window">
-			<header id="popup-msg">
-				<div class="popup-bar">
-					<div class="popup-text">Project</div>
-					<div id="popup-close">X</div>
-				</div>
+// // Javascript to know about my buttons and elements 
+// let channelBlocks = document.querySelector ('#channel-blocks')
+// let showVideoButton= document.querySelector('#show-video-button')
+// let showAllButton = document.querySelector('#show-all-button'
 
-				<div class="projectScroll">
-					<div class="aboutProject">
-						<p> Click on a project to learn more.</p>
-					</div>
-						<h1 id="channel-title"></h1>
-						<div id="channel-blocks"></div>
-						<div class="channel-users"> </div>
-					</div>
-			</header>
-		</div>
-`;
-	infodiv.appendChild(mainWin)
-})
+// // Add onclick for my buttons
+// showVideoButton.onclick =m () => {
+// 	// when I click show videos, it should add show-video class
+// 	channelBlocks.classList.add('show-video')
+// }
 
-// close popup
-const popup = document.getElementById("popup-close")
-const popContainer = document.getElementById("popContainer")
-popup.addEventListener("click", function(){
-	// console.log("hello")
-	popContainer.style.opacity = "0"
-})
-
-// cursor
-function myFunction (){
-	document.getElementById("popup-close").style.cursor="pointer";
-}
+// showAllButton.onclick = () => {
+// 	// when i click show all, it should remove show-video 
+// 	channelBlocks.classList.remove('show-video')
+// }

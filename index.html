@@ -7,6 +7,7 @@
 		<link href="stylesheet/main.css" rel="stylesheet">
 		<link href="assets" rel="stylesheet">
 		<script defer src="assets/arena.js"></script>
+		<script defer src="assets/main.js"></script>
 	</head>
 
 	<body>
@@ -32,38 +33,46 @@
 			</header>
 		</div>
 
-	<!-- Main content (Hidden by default) -->
-		<!--folders-->
+		<!-- New Div that appears after closing the first popup -->
+		<div id="black-screen">
+		</div>
+
+		<!-- Main content (Hidden by default) -->
+		<!--folder-icons-->
 		<section class="flex-folder-container" id="main-content">
 			<div class="folders" id="picfolder">
-				<img class="media-folders closed-folder"src="assets/picFolder.png">
+				<img class="media-folders closed-folder"src="assets/1.png">
 				<img class="media-folders open-folder" open-folder 
-				src="assets/open.png">
-				<div>Images</div>
+				src="assets/2.png">
+				<h3>Images</h3>
 			</div>
+
 			<div class="folders">
-				<img class="media-folders closed-folder"  src="assets/vidFolder.png">
-				<img class="media-folders open-folder " src="assets/open.png">
-				<div>Videos</div>
+				<img class="media-folders closed-folder"  src="assets/1.png">
+				<img class="media-folders open-folder " src="assets/2.png">
+				<h3>Videos</h3>
 			</div>
+
 			<div class="folders">
-				<img class="media-folders closed-folder"  src="assets/SoundFolder.png">
-				<img class="media-folders open-folder"  src="assets/open.png">
-				<div>Sounds</div>
+				<img class="media-folders closed-folder"  src="assets/1.png">
+				<img class="media-folders open-folder"  src="assets/2.png">
+				<h3>Sounds<h3>
 			</div>
+
 			<div class="folders">
 				<img class="media-folders" src="assets/bin.png">
+				<h3>Bin</h3>
 			</div>
+
 			<div class="folders">
 				<img class="media-folders" src="assets/internet.png">
+				<h3>Internet</h3>
 			</div>
 		</section>
 
-		<!-- full-screen black overlay -->
-		<div id="overlay">	
-		</div>
-		
-		<div id="info-here"></div>
+
+<!-- 		
+		<div id="info-here"></div> -->
 
 		<!-- Minesweeper image -->
 		</div>
