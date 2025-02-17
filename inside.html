@@ -2,30 +2,20 @@
 <html>
 	<head>
 		<title>Project 4: Links</title>
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="../stylesheet/reset.css" rel="stylesheet">
 		<link href="../stylesheet/common.css" rel="stylesheet">
+		<link href="../stylesheet/main.css" rel="stylesheet">
 		<link href="../stylesheet/style.css" rel="stylesheet">
 		<link href="../assets" rel="stylesheet">
 		<!-- <link rel="stylesheet" href="https://botoxparty.github.io/XP.css/dist/XP.css"> -->
 		<script defer src="../assets/arena.js"></script>
 		<script defer src="../assets/main.js"></script>
 	</head>
-
 	<body>
-		<!-- <section>
-			<h1> All blocks</h1>
-			<ul class="show-video" id="channel-title">
-				<buttton id="show-video=button">Show Video</buttton>
-			</ul>
-
-			<div id="channel-blocks">
-			
-			<div class="channel-users">
-		</section>	 -->
-
 		<div class="popup-container" id="main-window">
-			<header id="popup-msg">
+			<div id="popup-msg">
 				<div class="popup-bar">
 					<div class="popup-text">Project</div>
 					<div id="popup-close">X</div>
@@ -33,18 +23,26 @@
 
 				<div class="projectScroll">
 					<div class="aboutProject">
-						<p> Click on a project to learn more.</p>
-					<div>
+						<p> Click on a project to learn more</p>
+					</div>
 					<div>
 						<h1 id="channel-title"></h1>
-						<div id="channel-blocks"></div>
-						<div class="channel-users"> </div>
-					</div>
-			</header>
+						<p><a id="channel-link">See on Are.na</a></p>
+						<section id="channel-description"></section>
+					</div>	 
+				</div>
+				<main>
+					<section>
+						<h2>All blocks</h2>
+						<ul id="channel-blocks"></ul>
+						<p><span id="channel-count"></span>blocks</p>
+					</section>
+				</main>
+				<footer>
+					<h2>Your authors</h2>
+					<section id="channel-users"></section>
+				</footer>
+			</div>
 		</div>
-
-					<!-- sroll UI-->
-			<div class="scroll"></div>
-
 	</body>
 </html>

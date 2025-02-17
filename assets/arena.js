@@ -92,6 +92,7 @@ let renderBlock = (block) => {
 				<li>
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
+					
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -102,6 +103,7 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
+				
 		}
 
 		// Uploaded audio!
@@ -140,6 +142,7 @@ let renderBlock = (block) => {
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
+
 		}
 	}
 }
@@ -177,20 +180,3 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 	})
-
-
-// // Javascript to know about my buttons and elements 
-// let channelBlocks = document.querySelector ('#channel-blocks')
-// let showVideoButton= document.querySelector('#show-video-button')
-// let showAllButton = document.querySelector('#show-all-button'
-
-// // Add onclick for my buttons
-// showVideoButton.onclick =m () => {
-// 	// when I click show videos, it should add show-video class
-// 	channelBlocks.classList.add('show-video')
-// }
-
-// showAllButton.onclick = () => {
-// 	// when i click show all, it should remove show-video 
-// 	channelBlocks.classList.remove('show-video')
-// }
