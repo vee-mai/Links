@@ -23,7 +23,8 @@
 	--p-desktop:14px;
 	
 	/* colors */
-	--bg-color:rgb(234, 229, 223);
+	--bg-color:rgb(230,200,229);
+	--lbg-color:linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
 	--white:white;
 	--black:#121212;
 
@@ -51,20 +52,13 @@
 
 .rounded{
 	width:45px;
-	height:30px;
+	height:45px;
 }
 
 body{
-	background-color:var(--background-color);
-	cursor: url(/assets/cursor-1.png);
-}
-
-.cursor{
-	width:15px;
-	height:17px;
-	position:fixed;
-	z-index:999;
-	point-events:none;
+	background:var(--bg-color);
+	background:var(--lbg-color);
+	/* cursor: url('../cursor-1.png'), auto; */
 }
 
 h1{
@@ -75,18 +69,14 @@ h1{
 }
 
 p{
+	font-family:var(--secondary-font);
 	font-size: calc(var(--h2-mobile)+3px);
-	font-family:var(--p-desktop);
 	padding:var(--padding-m);
 	display: block;
 	max-width:50rem;
 	line-height:var(--line-height-s);
 }
 
-section{
-	width:100%;
-	padding:calc(var(--padding-m) * 2);
-}
 
 img{
 	display:block;
@@ -100,26 +90,10 @@ img{
 	gap:var(--padding-s);
 	background-color:rgb(6, 68, 6);
 }
-
-
 /* icons*/
 .info-icon{
 	width:20px;
 	height:20px;
-}
-
-/* folders-icons */
-.folders{
-	font-family:var(--primary-font);
-	font-size:var(--h2-mobile);
-}
-
-/* folder flex */
-.flex-folder-container{
-	display:flex;
-	flex-direction:column;
-	gap:calc(var(--padding-m) * 2);
-	
 }
 
 .icons{
@@ -127,10 +101,24 @@ img{
 	height:40px;
 }
 
+/* folders-icons */
+.folders{
+	font-family:var(--secondary-font);
+	font-size:var(--h3-mobile);
+}
+
+/* folder flex */
+.flex-folder-container{
+	display:flex;
+	flex-direction:row;
+	gap:calc(var(--padding-m) * 2);
+	padding:1rem;
+}
+
 /* folder icon size */
 .media-folders{
-	width:var(--folder-size);
-	height:var(--folder-size);
+	width:calc(var(--folder-size)*1);
+	height:calc(var(--folder-size)*1);
 	cursor:pointer;
 }
 
@@ -205,19 +193,18 @@ img{
 	top:3rem;
 	right:6rem;
 	width:200px;
-	display:none;
 }
 
-#black-screen{
-	background-color:black;
+/* background */
+#blackScreen{
+	background: rgb(230,200,229);
+	background: linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
 	position:absolute;
 	height:100vh;
 	width:100vw;
-	top:0;
-	left:0;
+	display:block;
 	z-index:100;
 }
-
 /* bottom navigation */
 .bottom-nav{
 	display:flex;
@@ -255,12 +242,8 @@ img{
 	height:50px;
 }
 
-.popup-container{
-	width:40%;
-}
-}
-@media (min-width:1280px){
 
+@media (min-width:1280px){
 
 body{
 	background: rgb(230,200,229);
