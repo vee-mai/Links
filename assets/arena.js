@@ -35,7 +35,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
+			<li class="link-block"
 				<p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
@@ -53,14 +53,17 @@ let renderBlock = (block) => {
 	// Images!
 	else if (block.class == 'Image') {
 		let imageItem =
-		`
-		<li>
+			`
+		<li class="image-block">
 			<p><em>Image</em></p>
+			<figure>
+				<figcaption>${block.title}</figcaption>
+			</figure>
 			<picture>
-				<img src="${ block.image.original.url }">
+				<img src="${ block.image.large.url}">
 			</picture>
 			<p>${ block.title }</p>
-			${ block.description_html }
+			<p>${ block.description_html }</p>
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -71,9 +74,9 @@ let renderBlock = (block) => {
 		let imageItem =
 		`
 		<li>
-			<p><em>Image</em></p>
+			<p><em>Text</em></p>
 			<p>${ block.title }</p>
-			${ block.description_html }
+			<p>${ block.content_html }</p>
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -89,10 +92,9 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="audio-block>
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
-					
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -130,7 +132,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="video-block>
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
