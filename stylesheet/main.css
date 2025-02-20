@@ -50,6 +50,89 @@
 	--popup-bar-color:rgb(163, 163, 163);
 }
 
+
+
+.projectScroll{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	overflow:auto;
+}
+
+.aboutProject{
+	padding:1rem;
+	max-width:60ch;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+.popupContainer{
+	padding:2rem;
+	position:fixed;
+	width:auto;
+	left:50%;
+	top:0%;
+	transform: translate(-50%,0)
+}
+
+li{
+	width:200px;
+	height:200px;
+	gap:50px;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+iframe {
+	width:200px;
+	height:200px;
+	object-fit: cover;
+}
+
+a{color:blue}
+
+.show-image{
+	li{
+		display:none;
+	}
+
+	li.image-block{
+		display:block;
+	}
+}
+
+.show-video{
+	li{
+		display:none;
+	}
+
+	li.video-block{
+		display:block;
+	}
+}
+
+#show-video-button{
+	padding:1rem;
+	background-color:aquamarine;
+	border-radius:50px;
+	cursor:pointer;
+}
+
+#show-all-button{
+	padding:1rem;
+	background-color:aquamarine;
+	border-radius:50px;
+	cursor:pointer;
+}
+
+/* need to double check  */
+ul{
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+}
 .rounded{
 	width:45px;
 	height:45px;
@@ -57,7 +140,6 @@
 
 body{
 	background:var(--bg-color);
-	background:var(--lbg-color);
 	/* cursor: url('../cursor-1.png'), auto; */
 }
 
@@ -84,24 +166,41 @@ img{
 
 /* bottom-nav*/
 .left-nav{
-	display:flex;
 	align-items: center;
 	padding:var(--padding-s);
 	gap:var(--padding-s);
 	background-color:rgb(6, 68, 6);
 }
+
 /* icons*/
+.icons-flex{
+	display:flex;
+	justify-content:space-evenly;
+}
+
+.icons-flex-2{
+	display:flex;
+	justify-content:space-evenly;
+	flex-direction:column;
+}
+
 .info-icon{
 	width:20px;
 	height:20px;
 }
 
+/* icons size */
 .icons{
-	width:40px;
-	height:40px;
+	width:4rem;
+	height:4rem;
 }
 
-/* folders-icons */
+.media-folders{
+	width:6rem;
+	height:6rem;
+}
+
+/* folders-size */
 .folders{
 	font-family:var(--secondary-font);
 	font-size:var(--h3-mobile);
@@ -109,17 +208,10 @@ img{
 
 /* folder flex */
 .flex-folder-container{
-	display:flex;
+	/* display:flex; */
 	flex-direction:row;
 	gap:calc(var(--padding-m) * 2);
 	padding:1rem;
-}
-
-/* folder icon size */
-.media-folders{
-	width:calc(var(--folder-size)*1);
-	height:calc(var(--folder-size)*1);
-	cursor:pointer;
 }
 
 /* folder open/close state */
@@ -149,15 +241,25 @@ img{
 /* popup-message-01*/
 .popup-container{
 	display:flex;
+	display:none;
+
 	justify-content:center;
+	border-radius:0.2rem;
 	z-index:200;
+	text-align: center;
+	height:650px;
 }
 
 #popup-msg{
 	background-color: var(--white);
-	border-radius:0.5rem;
-	width:95%;
+	width:70vw;
 	border:var(--popup-border);
+	height:650px;
+}
+
+.frame{
+	height:610px;
+	overflow-y:scroll;
 }
 
 .popup-bar{
@@ -199,15 +301,18 @@ img{
 #blackScreen{
 	background: rgb(230,200,229);
 	background: linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
-	position:absolute;
+	position:fixed;
 	height:100vh;
 	width:100vw;
 	display:block;
-	z-index:100;
+	z-index:150;
+	transition: ease-in-out 0.3s;
 }
+
 /* bottom navigation */
 .bottom-nav{
 	display:flex;
+	position:fixed;
 	flex-display:row;
 	bottom:0;
 	background-color:#76acee;
@@ -234,7 +339,14 @@ img{
 	width:20%;
 }
 
-@media (min-width:750px){
+@media (min-width:782px){
+
+.icons-flex{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
 
 /* folder icon size */
 .media-folders{
@@ -244,6 +356,24 @@ img{
 
 
 @media (min-width:1280px){
+
+.icons{
+	width:3.5rem;
+	height:3.5rem;
+}
+
+.icons-flex{
+	display:flex;
+	flex-direction:column;
+}
+
+.icons-flex-2{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-evenly;
+	width:auto;
+}
+
 
 body{
 	background: rgb(230,200,229);
@@ -347,22 +477,16 @@ p{
 /* folder flex */
 .flex-folder-container{
 	display:flex;
-	flex-direction:column;
+	flex-direction:row;
 	gap:1rem;
-	max-width:10%;
 }
 
-/* folder icon size */
-.media-folders{
-	width:var(--folder);
-	height:var(--folder);
-}
 
 /* popup-message-01*/
 .popup-container{
 	position:fixed;
-	right:30rem;
-	top:12.5rem;
+	right:0.5rem;
+	top:4rem;
 }
 
 .popup-bar{
@@ -401,4 +525,9 @@ p{
 	width:100%;
 }
 
+ul{
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 20px;
 }
+

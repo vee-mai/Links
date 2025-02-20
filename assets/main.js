@@ -44,49 +44,42 @@
 // })
 
 
-// // Let Javascript know about my buttons and elements 
-// let channelBlocks = document.querySelector ('#channel-blocks')
-// //let showImageButton= document.querySelector('#picfolder')
-// let showVideoButton= document.querySelector('#show-video-button')
-// let showAllButton = document.querySelector('#show-all-buttonr')
+// Let Javascript know about my buttons and elements 
+let channelBlocks = document.querySelector ('#channel-blocks')
+//let showImageButton= document.querySelector('#picfolder')
+let showVideoButton= document.querySelector('#show-video-button')
+let showAllButton = document.querySelector('#show-all-buttonr')
  
-// // Add onclick for my buttons
-// showVideoButton.onclick =m () => {
-// 	//when I click show videos, it should add show-video class
-// 	channelBlocks.classList.add('show-video')
-// // 	channelBlocks.classList.remove('show-image')
-// // // }
+// Add onclick for my buttons
+showVideoButton.onclick =m () => {
+	//when I click show videos, it should add show-video class
+	channelBlocks.classList.add('show-video')
+	channelBlocks.classList.remove('show-image')
+}
 
-// // showImageButton.onclick = () => {
-// 	//when i click show all, it should remove show-video 
-// // 		channelBlocks.classList.add('show-image')
-// // 		channelBlocks.classList.remove('show-video')
-// // }
+showImageButton.onclick = () => {
+	// when i click show all, it should remove show-video 
+		channelBlocks.classList.add('show-image')
+		channelBlocks.classList.remove('show-video')
+}
 
-// showAllButton.onclick = () => {
-// 	// when I click show all, it should remove show-video 
-// 	channelBlocks.classList.remove('show-video')
-// // 	channelBlocks.classList.remove('show-image')
-// // }
+showAllButton.onclick = () => {
+	// when I click show all, it should remove show-video 
+	channelBlocks.classList.remove('show-video')
+// 	channelBlocks.classList.remove('show-image')
+// }
 
 
 
 // close popup
 const popup = document.getElementById("popup-close")
-const popContainer = document.getElementById("popContainer")
+const popContainer = document.getElementById("popup-container")
 popup.addEventListener("click", function(){
-	// console.log("hello")
+	console.log("hello")
 
 	// hide the current popup
-	popContainer.style.display = "none"
-})
-
-// blackscreen goes away revealing real screen
-const blackBg = document.getElementById("blackScreen")
-popup.addEventListener("click", function(){
-
-	// hide black-screen
-	blackBg.style.visibility = "hidden"
+	let popContainer;
+	popContainer.style.display = 'none'
 })
 
 // cursor

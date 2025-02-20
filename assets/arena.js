@@ -55,6 +55,7 @@ let renderBlock = (block) => {
 		let imageItem =
 			`
 		<li class="image-block">
+		<button>
 			<p><em>Image</em></p>
 			<figure>
 				<figcaption>${block.title}</figcaption>
@@ -62,8 +63,11 @@ let renderBlock = (block) => {
 			<picture>
 				<img src="${ block.image.large.url}">
 			</picture>
+		</button>
+		<dialog class="modal">
 			<p>${ block.title }</p>
 			<p>${ block.description_html }</p>
+		</dialog>
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -163,6 +167,28 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
 
+let initInteraction = () => {
+	let  imageBlocks = document.querySelectorAll('.image-block')
+	imageBlocks.forEach((block) => {
+		let openButton = block.querySelector('button')
+		let dialog = block.querySelector('dialog')
+		let closeButton = dialog.querySelector('button')
+
+		openButton.onclick = () => {
+			dialog.showModal()
+		}
+
+		closeButton.onclick = () => {
+			dialog.close()
+		}
+
+		dialog.onclick = (event) => {
+			if (event.target == dialog) {
+				dialog.close()
+			}
+		}
+	})
+}
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
@@ -182,3 +208,4 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 		data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 		renderUser(data.user, channelUsers)
 	})
+

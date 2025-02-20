@@ -18,7 +18,7 @@
 		</div> -->
 		
 		<!-- popup-message-01 -->
-		<div class="popup-container" id="popContainer">
+		<div class="popup-container">
 			<header id="popup-msg">
 				<div class="popup-bar">
 					<h1 class="popup-text">Welcome</h1>
@@ -35,51 +35,55 @@
 		</div>
 
 		<!-- Dissapear after closing the first popup -->
-		<div class="blackBg" id="blackScreen">
-		</div>
+		<!-- <div class="blackBg" id="blackScreen">
+		</div> -->
 
 		<!--Folder-icons-->
-		<section class="flex-folder-container" id="main-content">
-			<button class="folders" id="picfolder">
-				<div class="icon-text">
-					<img class="media-folders closed-folder"src="assets/1.png">
-					<img class="media-folders open-folder" open-folder 
-					src="assets/2.png">
-				</div>
-				<div class="text-icon">
-					<h3>Images</h3>
-				</div>
-			</button>
+		<section class="flex-folder-container">
+			<div class="icons-flex">
+				<button class="folders" id="picfolder">
+					<div class="icon-text">
+						<img class="media-folders closed-folder"src="assets/1.png">
+						<img class="media-folders open-folder" open-folder 
+						src="assets/2.png">
+					</div>
+					<div class="text-icon">
+						<h3>Images</h3>
+					</div>
+				</button>
 
-			<button class="folders" id="vidfolder">
-				<div class="icon-text">
+				<button class="folders" id="vidfolder">
+					<div class="icon-text">
+						<img class="media-folders closed-folder"  src="assets/1.png">
+						<img class="media-folders open-folder " src="assets/2.png">
+					</div>
+					<div class="text-icon">
+						<h3>Videos</h3>
+					</div>
+				</button>
+
+				<button class="folders" id="allfolder">
 					<img class="media-folders closed-folder"  src="assets/1.png">
-					<img class="media-folders open-folder " src="assets/2.png">
-				</div>
-				<div class="text-icon">
-					<h3>Videos</h3>
-				</div>
-			</button>
-
-			<button class="folders" id="allfolder">
-				<img class="media-folders closed-folder"  src="assets/1.png">
-				<img class="media-folders open-folder"  src="assets/2.png">
-				<h3>Others</h3>
-			</button>
-
-			<div class="folders">
-				<img class="icons" src="assets/bin.png">
-				<h3>Bin</h3>
+					<img class="media-folders open-folder"  src="assets/2.png">
+					<h3>Others</h3>
+				</button>
 			</div>
 
-			<div class="folders">
-				<img class="icons" src="assets/internet.png">
-				<h3>Internet</h3>
-			</div>
+			<div class="icons-flex-2">
+				<div class="folders-flex">
+					<img class="icons" src="assets/bin.png">
+					<h3>Bin</h3>
+				</div>
 
-			<div class="folders">
-				<img class="icons" src="assets/user.png">
-				<h3>Vee Mai</h3>
+				<div class="folders">
+					<img class="icons" src="assets/internet.png">
+					<h3>Internet</h3>
+				</div>
+
+				<div class="folders">
+					<img class="icons" src="assets/user.png">
+					<h3>Vee Mai</h3>
+				</div>
 			</div>
 		</section>
 
@@ -88,16 +92,47 @@
 		<img id="game-icon" src="assets/game.jpeg">
 		<div> -->
 			
+		<section>
+			<div class="popupContainer">
+				<div id="popup-msg">
+					<div class="popup-bar">
+						<div class="popup-text">Project</div>
+						<div id="popup-close">X</div>
+					</div>
+					<div class="frame">
+						<div class="projectScroll">
+							<div class="aboutProject">
+								<p> Click on a project to learn more</p>
+								<button id="show-video-button">Show Videos</button>
+								<button id="show-all-button">Show All</button>
+							</div>
+						<div>
+							<h1 id="channel-title"></h1>
+							<p><a id="channel-link">See on Are.na</a></p>
+							<section id="channel-description"></section>
+						</div>
 		
+						<main>
+							<section>
+								<h2>All blocks</h2>
+								<ul class="show-video"></ul>
+								<ul id="channel-blocks"></ul>
+								<p><span id="channel-count"></span>blocks</p>
+							</section>
+						</main>
+					</div>
+			</div>	
+		</section>
 
-			<!-- <div class="bottom-nav">
+		<footer>
+			<div class="bottom-nav">
 				<div class="left-nav">
 					<img class="info-icon" src="assets/info.png">
 					<h3>T&I</h3>
 				</div>
-				<div class="right-nav">
+					<div class="right-nav">
 				</div>
-			</div> -->
-
+			</div>
+		</footer>
 	</body>
 </html>
