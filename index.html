@@ -26,71 +26,72 @@
 				</div>
 				<div>
 					<img id="caution-icon" src="assets/save.png">
-			
-					<p> This website feature a channel that is curated archive of the sights, sounds, and memories from the millennium.</p>
-
-					<p> It’s a nostalgic journey through time, capturing the essence of an era that feels both distant and familiar. Explore, reminisce, and connect with a time that feels like yesterday yet belongs to history.</p>
+					<section id="channel-description"></section>
 				</div>
 			</header>
 		</div>
 
-		<!-- Dissapear after closing the first popup -->
-		<!-- <div class="blackBg" id="blackScreen">
-		</div> -->
-
-		<!--Folder-icons-->
+		<!--Main-buttons-->
 		<section class="flex-folder-container">
 			<div class="icons-flex">
-				<button class="folders" id="picfolder">
+				<button class="folders" id="pic-folder">
 					<div class="icon-text">
 						<img class="media-folders closed-folder"src="assets/1.png">
-						<img class="media-folders open-folder" open-folder 
-						src="assets/2.png">
+						<img class="media-folders open-folder"src="assets/2.png">
 					</div>
-					<div class="text-icon">
+					<div class="folder-header">
 						<h3>Images</h3>
 					</div>
 				</button>
 
-				<button class="folders" id="vidfolder">
+				<button class="folders" id="vid-folder">
 					<div class="icon-text">
-						<img class="media-folders closed-folder"  src="assets/1.png">
-						<img class="media-folders open-folder " src="assets/2.png">
+						<img class="media-folders closed-folder"src="assets/1.png">
+						<img class="media-folders open-folder"src="assets/2.png">
 					</div>
-					<div class="text-icon">
+					<div class="folder-header">
 						<h3>Videos</h3>
 					</div>
 				</button>
 
-				<button class="folders" id="allfolder">
-					<img class="media-folders closed-folder"  src="assets/1.png">
-					<img class="media-folders open-folder"  src="assets/2.png">
-					<h3>Others</h3>
+				<button class="folders" id="all-folder">
+					<img class="media-folders closed-folder"src="assets/1.png">
+					<img class="media-folders open-folder"src="assets/2.png">
+					<div class="folder-header">
+						<h3>All Blocks
+					</div>
 				</button>
 			</div>
 
 			<div class="icons-flex-2">
-				<div class="folders-flex">
-					<img class="icons" src="assets/bin.png">
-					<h3>Bin</h3>
+				
+				<div class="folders">
+					<div class="desktop-icons">
+						<img class="icons" src="assets/bin.png">
+					</div>
+					<div class="icons-header">
+						<h3>Bin</h3>
+					</div>
 				</div>
 
 				<div class="folders">
-					<img class="icons" src="assets/internet.png">
-					<h3>Internet</h3>
+					<div class="desktop-icons">
+						<img class="icons" src="assets/internet.png">
+					</div>
+					<div class="icons-header">
+						<h3>Internet</h3>
+					</div>
 				</div>
 
 				<div class="folders">
-					<img class="icons" src="assets/user.png">
-					<h3>Vee Mai</h3>
+					<div class="desktop-icons">
+						<img class="icons" src="assets/user.png">
+					</div>
+					<div class="icons-header">
+						<h3>Vee Mai</h3>
+					</div>
 				</div>
-			</div>
 		</section>
-
-		<!-- Minesweeper image -->
-		<!-- </div>
-		<img id="game-icon" src="assets/game.jpeg">
-		<div> -->
 			
 		<section>
 			<div class="popupContainer">
@@ -102,27 +103,30 @@
 					<div class="frame">
 						<div class="projectScroll">
 							<div class="aboutProject">
-								<p> Click on a project to learn more</p>
-								<button id="show-video-button">Show Videos</button>
-								<button id="show-all-button">Show All</button>
+								<p>Click on a project to learn more</p>
 							</div>
-						<div>
-							<h1 id="channel-title"></h1>
-							<p><a id="channel-link">See on Are.na</a></p>
-							<section id="channel-description"></section>
-						</div>
+							<div>
+								<h1 id="channel-title"></h1>
+								<p><a id="channel-link">See on Are.na</a></p>
+								<!-- <section id="channel-description"></section> -->
+							</div>
 		
-						<main>
-							<section>
-								<h2>All blocks</h2>
-								<ul class="show-video"></ul>
-								<ul id="channel-blocks"></ul>
-								<p><span id="channel-count"></span>blocks</p>
-							</section>
-						</main>
-					</div>
-			</div>	
+							<main>
+								<section>
+									<h2>All blocks</h2>
+									<ul class="show-video"></ul>
+									<ul id="channel-blocks"></ul>
+									<p><span id="channel-count"></span> blocks</p>
+								</section>
+							</main>
+						</div> <!-- Closing projectScroll div -->
+					</div> <!-- Closing frame div -->
+				</div> <!-- Closing popup-msg div -->
+			</div> <!-- Closing popupContainer div -->
 		</section>
+		
+
+		
 
 		<footer>
 			<div class="bottom-nav">
