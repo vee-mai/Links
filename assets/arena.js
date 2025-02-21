@@ -95,7 +95,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li class="audio-block>
+				<li class="video-block">
 					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
@@ -118,7 +118,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></video>
+					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
