@@ -96,7 +96,8 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li class="video-block">
-					<p><em>Video</em></p>
+				<div class = "preview"></div>
+					<p>Video<</p>
 					<video class="video-size" controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -134,16 +135,10 @@ let renderBlock = (block) => {
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
-				// `
-				// <li class="video-block>
-				// 	<p><em>Linked Video</em></p>
-				// 	${ block.embed.html }
-				// </li>
-				// `
 				`
-				<li class="video-block">
+				<li class="video-block>
 					<p><em>Linked Video</em></p>
-					<video class="video-size" controls src="${ block.embed.html }"></video>
+					${ block.embed.html }
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
