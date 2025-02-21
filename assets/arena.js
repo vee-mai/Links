@@ -36,7 +36,7 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="link-block"
-				<p><em>Link</em></p>
+				
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">

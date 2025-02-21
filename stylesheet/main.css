@@ -3,79 +3,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 :root{
-	/* typefaces */
+	/* Typefaces */
 	--primary-font:"Press Start 2P", serif;
 	--secondary-font:"Play", serif;
 
+	/* Line Height & Width */
 	--line-height-s:1.5;
 	--p-width:50rem;
 	--width-l:100%;
 
-	/* mobile typeface sizes */
-	--h1-mobile:20px;
+	/* Mobile typeface sizes */
+	--h1-mobile:13px;
 	--h2-mobile:12px;
-	--h3-mobile:12px;
+	--h3-mobile:11px;
 
-	/* desktop typeface sizes */
+	/* Desktop Typeface Sizes */
 	--h1-desktop:14px;
 	--h2-desktop:12px;
 	--h3-desktop:10px;
 	--p-desktop:14px;
 	
-	/* colors */
+	/* Colors */
 	--bg-color:rgb(230,200,229);
 	--lbg-color:linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
 	--white:white;
 	--black:#121212;
 
-	/* padding */
+	/* Padding */
+	--padding-xs:0.3rem;
 	--padding-s:0.5rem;
 	--padding-m:1rem;
 
-	/* border */
+	/* Border */
 	--border-s: 0.2px solid #121212;
 	--border-m: 1.5px solid #121212;
 	--border-radius-popup:0.2rem;
-
-	/* folder icon */
-	--folder:60px;
-
-	
-	/* icon Sizes */
-	--icon-size:20px;
 
 	/* popup */
 	--top-nav:rgb(163, 163, 163);
 	--popup-border: 2px solid rgb(53, 53, 53);
 	--popup-bar-color:rgb(163, 163, 163);
+
+	/* icons size */
+	--icons-xs:1.2rem;
+	--icons-s:3rem;
+	--icons-m:3.5rem;
+	--icons-l:4rem;
 }
 
+/* Typography */
+body{
+	background:var(--bg-color);
+	/* cursor: url('../cursor-1.png'), auto; */
+}
 
+h1{
+	font-family:var(--secondary-font);
+	font-size:var(--h2-mobile);
+	text-align:center;
+	color:var((--white));
+}
+
+h2{
+	font-family:var(--secondary-font);
+	font-size:var(--h2-mobile);
+	color:var((--white));
+	padding-left:var(--padding-m);
+}
+
+p{
+	font-family:var(--secondary-font);
+	font-size: calc(var(--h2-mobile)+3px);
+	padding:var(--padding-m);
+	display: block;
+	max-width:50rem;
+	line-height:var(--line-height-s);
+}
+
+/* Main modal */
+.popupContainer{
+	padding:var(--padding-m);
+	position:fixed;
+	width:auto;
+	left:50%;
+	top:14%;
+	transform: translate(-50%,0);
+}
 
 .projectScroll{
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	justify-content: center;
+	justify-content:center;
 	overflow:auto;
 }
 
 .aboutProject{
-	padding:1rem;
+	padding:var(--padding-m);
 	max-width:60ch;
 	margin-left:auto;
 	margin-right:auto;
 	text-align:center;
-}
-
-
-.popupContainer{
-	padding:1rem;
-	position:fixed;
-	width:auto;
-	left:50%;
-	top:28%;
-	transform: translate(-50%,0)
 }
 
 li{
@@ -92,8 +120,7 @@ iframe {
 	object-fit: cover;
 }
 
-a{color:blue}
-
+/* buttons */
 #pic-folder{
 	li{
 		display:none;
@@ -124,76 +151,22 @@ a{color:blue}
 	}
 }
 
-
-
 /* need to double check  */
 ul{
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 20px;
 }
-.rounded{
-	width:45px;
-	height:45px;
-}
-
-body{
-	background:var(--bg-color);
-	/* cursor: url('../cursor-1.png'), auto; */
-}
-
-h1{
-	font-family:var(--secondary-font);
-	font-size:var(--h2-mobile);
-	text-align:center;
-	color:var((--white));
-}
-
-p{
-	font-family:var(--secondary-font);
-	font-size: calc(var(--h2-mobile)+3px);
-	padding:var(--padding-m);
-	display: block;
-	max-width:50rem;
-	line-height:var(--line-height-s);
-}
-
 
 img{
 	display:block;
-}
-
-/* bottom-nav*/
-.left-nav{
-	align-items: center;
-	padding:var(--padding-s);
-	gap:var(--padding-s);
-	background-color:rgb(6, 68, 6);
-}
-
-/* icons*/
-.icons-flex{
-	display:flex;
-	justify-content:space-evenly;
-}
-
-/* icons second row  */
-.icons-flex-2{
-	display:flex;
-	flex-direction:row;
-	justify-content:space-evenly;
-	margin-top:1rem;
-}
-
-.info-icon{
-	width:20px;
-	height:20px;
+	width:80%;
+	height:80%;
 }
 
 /* icons size */
 .icons{
-	width:3rem;
-	height:3rem;
+	width:var(--icons-s);
+	height:var(--icons-s);
 }
 
 /* folders-size */
@@ -204,18 +177,32 @@ img{
 	display:inline;
 }
 
-/* folder flex */
+/* BIG folder flex */
 .flex-folder-container{
 	display:flex;
 	flex-direction:column;
 	gap:var(--padding-s);
-	padding:1rem;
+	padding:var(--padding-m);
 }
 
-/* folder size */
+/* folder flex 1*/
+.icons-flex{
+	display:flex;
+	justify-content:space-evenly;
+}
+
+/* folder flex 2*/
+.icons-flex-2{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	margin-top:var(--padding-m);
+}
+
+/* main folder size */
 .media-folders{
-	width:3.5rem;
-	height:3rem;
+	width:var(--icons-m);
+	height:var(--icons-s);
 }
 
 /* folder open/close state */
@@ -260,9 +247,9 @@ img{
 
 #popup-msg{
 	background-color: var(--white);
-	width:70vw;
+	width:90vw;
 	border:var(--popup-border);
-	height:650px;
+	border-radius:calc(var(--border-radius-popup) + 2px);
 }
 
 .frame{
@@ -274,11 +261,12 @@ img{
 	background: rgb(2,0,36);
 	background:var(--popup-bar-color);
 	display:flex;
+	border-bottom:2px solid #121212;
 }
 
 .popup-text{
 	font-family:var(--primary-font);
-	font-size:var(--h1-size-mobile);
+	font-size:var(--h3-mobile);
 	color: var(--black);
 	width:95%;
 	padding:0rem 0rem 0rem 1rem;
@@ -298,22 +286,14 @@ img{
 	cursor:pointer;
 }
 
-#game-icon{
-	position:absolute;
-	top:3rem;
-	right:6rem;
-	width:200px;
-}
-
-
 /* bottom navigation */
 .bottom-nav{
 	display:flex;
 	position:fixed;
-	flex-display:row;
+	flex-direction:row;
 	bottom:0;
 	background-color:var(--top-nav);
-	outline: 1.5px solid #121212;
+	outline:var(--border-m);
 	gap:calc(var(--padding-m) * 80);
 	bottom:0;
 	width:auto;
@@ -324,9 +304,12 @@ img{
 	flex-direction:row;
 	background-color:var(--top-nav);
 	border-radius: 0px 5px 5px 0px;
-	padding-left:1rem;
-	padding-right:2.5rem;
-	outline: 1.5px solid #121212;
+	padding-top:var(--padding-xs);
+	padding-bottom:var(--padding-xs);
+	padding-left:var(--padding-s);
+	padding-right:calc(var(--padding-m) + 1rem);
+	outline:var(--border-m);
+	
 }
 
 .right-nav{
@@ -334,6 +317,21 @@ img{
 	align-items: center;
 	padding:var(--padding-s);
 	width:20%;
+	align-items: center;
+	padding:var(--padding-s);
+	gap:var(--padding-s);
+}
+
+/* bottom nav icons */
+.info-icon{
+	width:var(--icons-xs);
+	height:var(--icons-xs);
+}
+
+#channel-title{
+	font-family:var(--primary-font);
+	font-size:var(--h2-mobile);
+	margin-top:1rem;
 }
 
 @media (min-width:782px){
@@ -347,6 +345,10 @@ img{
 
 
 @media (min-width:1280px){
+
+#popup-msg{
+	width:80vw;
+}
 
 .popupContainer{
 	padding:1rem;
@@ -496,7 +498,6 @@ p{
 
 .popup-bar{
 	background-color:var(--top-nav);
-	outline:var(--popup-border);
 }
 
 .popup-close{
