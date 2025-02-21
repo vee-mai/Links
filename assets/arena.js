@@ -97,7 +97,7 @@ let renderBlock = (block) => {
 				`
 				<li class="video-block">
 					<p><em>Video</em></p>
-					<video controls src="${ block.attachment.url }"></video>
+					<video class="video-size" controls src="${ block.attachment.url }"></video>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -118,7 +118,7 @@ let renderBlock = (block) => {
 				`
 				<li>
 					<p><em>Audio</em></p>
-					<audio controls src="${ block.attachment.url }"></audio>
+					<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -134,10 +134,16 @@ let renderBlock = (block) => {
 		if (embed.includes('video')) {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
+				// `
+				// <li class="video-block>
+				// 	<p><em>Linked Video</em></p>
+				// 	${ block.embed.html }
+				// </li>
+				// `
 				`
-				<li class="video-block>
+				<li class="video-block">
 					<p><em>Linked Video</em></p>
-					${ block.embed.html }
+					<video class="video-size" controls src="${ block.embed.html }"></video>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)

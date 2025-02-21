@@ -138,9 +138,17 @@ iframe {
 
 	li.video-block{
 		display:block;
-		/* height:100px;
-		width:100px; */
 	}
+}
+
+.video-size{
+	height: 140px;
+	width:140px;
+}
+
+.audio-size{
+	height: 140px;
+	width:140px;
 }
 
 #all-folder{
@@ -539,3 +547,38 @@ ul{
 	gap: 20px;
 }
 
+/* buttons */
+#pic-folder{
+	li{
+		display:none;
+	}
+
+	li.image-block{
+		display:block;
+	}
+}
+
+#vid-folder{
+	li{
+		display:none;
+	}
+
+	li.video-block{
+		display:block;
+	}
+}
+
+.video-size{
+	height:100px;
+	width:100px;
+}
+
+#all-folder{
+	li{
+		display:none;
+	}
+
+	li.video-block{
+		display:block;
+	}
+}
