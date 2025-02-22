@@ -136,7 +136,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="video-block>
+				<li class="video-block>"
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
