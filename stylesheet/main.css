@@ -344,6 +344,61 @@ img{
 	margin-top:1rem;
 }
 
+.content-modal{
+	display: flex;
+	flex-direction:column;
+	background-color:var(--white);
+	width:80%;
+	top:15%;
+	left:10%;
+	border: 2px solid #121212;
+}
+
+.modal-message{
+	background-color:var(--top-nav);
+	display:flex;
+	flex-direction:row;
+	border-bottom:2px solid #121212;
+	gap:5rem;
+	width:auto;
+}
+
+.modal-close{
+	font-family: var(--primary-font);
+	font-size: calc(var(--h2-mobile) +2px);
+	color: var(--black);
+	padding: 0.2rem;
+	margin: 0.3rem;
+	background-color: var(--top-nav);
+	border-radius: var(--border-radius-popup);
+	border: var(--popup-border);
+	cursor: pointer;
+	right:11%;
+}
+
+.modal-text{
+	font-family:var(--primary-font);
+	font-size:var(--h1-mobile);
+	padding:0.7rem;
+}
+::backdrop{
+	backdrop-filter:blur(14px);
+}
+
+.modal-content{
+	width:auto;
+	height:auto;
+}
+
+.modal-image{
+	width:100%;
+	height:auto;
+}
+
+.link-block{
+	cursor: pointer;
+}
+
 @media (min-width:782px){
 
 .icons-flex{
@@ -355,6 +410,24 @@ img{
 
 
 @media (min-width:1280px){
+.modal-message{
+	width:auto;
+	gap:49rem;
+}
+
+.modal-close{
+	cursor: pointer;
+}
+
+.modal-contents{
+	justify-items: center;
+}
+
+.modal-image{
+	width:55vw;
+	max-height:55vh;
+	padding:1.5rem;
+}
 
 #popup-msg{
 	width:80vw;
@@ -377,6 +450,7 @@ img{
 .icons-flex{
 	display:flex;
 	flex-direction:column;
+	gap:12px;
 }
 
 .icons-flex-2{
@@ -384,6 +458,7 @@ img{
 	flex-direction:column;
 	justify-content:space-evenly;
 	width:auto;
+	gap:12px;
 }
 
 

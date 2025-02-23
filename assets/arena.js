@@ -15,13 +15,13 @@ let placeChannelInfo = (data) => {
 	let channelTitle = document.getElementById('channel-title')
 	let channelDescription = document.getElementById('channel-description')
 	let channelCount = document.getElementById('channel-count')
-	// let channelLink = document.getElementById('channel-link')
+	let channelLink = document.getElementById('channel-link')
 
 	// Then set their content/attributes to our data:
 	channelTitle.innerHTML = data.title
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
 	channelCount.innerHTML = data.length
-	// channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
 // Then our big function for specific-block-type rendering:
@@ -40,34 +40,46 @@ let renderBlock = (block) => {
 				<img src="assets/preview.png" class="preview">
 			</button>
 			<dialog class="content-modal">
-				<p>${ block.title }</p>
-				<p>${ block.description_html }</p>
-				<p><a href="${ block.source.url }">See the original ↗ </a></p>
+				<div class="modal-message">
+					<div class="modal-bar">
+						<h1 class="modal-text">${ block.title }</h1>
+					</div>
+					<div>
+						<button class="modal-close">X</button>
+					</div>
+				</div>
+					<div class="modal-contents">
+						<img class="modal-image" src="${ block.image.original.url}">
+						<p>${ block.description_html }</p>
+						<h4>Added By ${block.connected_by_username}</h4>
+						<p><a href="${ block.source.url }"> See the original ↗ </a></p>
+					</div>
+				</div>
 			</dialog>
 			</li>
 			`
-		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
-		// let linkBlocks = document.querySelectorAll('.link-block')
-		// linkBlocks.forEach((block) => {
-		// 	let openButton = block.querySelector('button')
-		// 	let dialog = block.querySelector('dialog')
-		// 	let closeButton = dialog.querySelector('button')
+		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		let linkBlocks = document.querySelectorAll('.link-block')
+		linkBlocks.forEach((block) => {
+			let openButton = block.querySelector('button')
+			let dialog = block.querySelector('dialog')
+			let closeButton = dialog.querySelector('button')
 	
-		// 	openButton.onclick = () => {
-		// 		dialog.showModal()
-		// 	}
+			openButton.onclick = () => {
+				dialog.showModal()
+			}
 	
-		// 	closeButton.onclick = () => {
-		// 		dialog.close()
-		// 	}
+			closeButton.onclick = () => {
+				dialog.close()
+			}
 	
-		// 	dialog.onclick = (event) => {
-		// 		if (event.target == dialog) {
-		// 			dialog.close()
-		// 		}
-		// 	}
-		// })
-		// linkBlocks()
+			dialog.onclick = (event) => {
+				if (event.target == dialog) {
+					dialog.close()
+				}
+			}
+		})
+		linkBlocks()
 	}
 
 	// Images
@@ -78,20 +90,48 @@ let renderBlock = (block) => {
 		<button>
 			<img src="assets/preview.png" class="preview">
 			<figure>
-				<figcaption>${block.title}</figcaption>
+				<figcaption>Preview</figcaption>
 			</figure>
-			<picture>
-				<img src="${ block.image.large.url}">
-			</picture>
 		</button>
-		<dialog class="modal">
-			<p>${ block.title }</p>
-			<p>${ block.description_html }</p>
+		<dialog class="content-modal">
+				<div class="modal-message">
+					<div class="modal-bar">
+						<p>${ block.title }</p>
+					</div>
+					<div>
+						<button class="modal-close">X</button>
+					</div>
+				</div>
+				<div>
+					<img src="${ block.image.large.url}">
+					<p>${ block.description_html }</p>
+				</div>
 		</dialog>
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	}
+	// let imageItem= document.querySelectorAll('.image-block')
+	// imageBlock.forEach((block) => {
+	// 	let openButton = block.querySelector('button')
+	// 	let dialog = block.querySelector('dialog')
+	// 	let closeButton = dialog.querySelector('button')
+	
+	// 	openButton.onclick = () => {
+	// 		dialog.showModal()
+	// 	}
+	
+	// 	closeButton.onclick = () => {
+	// 		dialog.close()
+	// 	}
+	
+	// 	dialog.onclick = (event) => {
+	// 		if (event.target == dialog) {
+	// 			dialog.close()
+	// 		}
+	// 	}
+	// })
+	// imageBlocks()
+}
 
 	// Text!
 	else if (block.class == 'Text') {
@@ -108,6 +148,7 @@ let renderBlock = (block) => {
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	
 	}
 	
 

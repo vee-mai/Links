@@ -19,6 +19,7 @@ showAllButton.onclick = () => {
 	channelBlocks.classList.remove('show-image')
 }
 
+
 // close popup
 const popup = document.getElementById("popup-close")
 const popContainer = document.getElementById("popup-container")
