@@ -24,7 +24,7 @@
 	--p-desktop:14px;
 	
 	/* Colors */
-	--bg-color:rgb(230,200,229);
+	--bg-color:rgb(246, 245, 235);
 	--lbg-color:linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
 	--white:white;
 	--black:#121212;
@@ -462,8 +462,8 @@ img{
 
 
 body{
-	background: rgb(230,200,229);
-	background: linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%);
+	/* background: rgb(230,200,229);
+	background: linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%); */
 	cursor: url('../cursor-1.png'), auto;
 }
 
