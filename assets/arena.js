@@ -35,27 +35,48 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li class="link-block"
-
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
+			<li class="link-block">
+			<button>
+				<img src="assets/preview.png" class="preview">
+			</button>
+			<dialog class="content-modal">
+				<p>${ block.title }</p>
+				<p>${ block.description_html }</p>
+				<p><a href="${ block.source.url }">See the original ↗ </a></p>
+			</dialog>
 			</li>
 			`
-		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		// channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		// let linkBlocks = document.querySelectorAll('.link-block')
+		// linkBlocks.forEach((block) => {
+		// 	let openButton = block.querySelector('button')
+		// 	let dialog = block.querySelector('dialog')
+		// 	let closeButton = dialog.querySelector('button')
+	
+		// 	openButton.onclick = () => {
+		// 		dialog.showModal()
+		// 	}
+	
+		// 	closeButton.onclick = () => {
+		// 		dialog.close()
+		// 	}
+	
+		// 	dialog.onclick = (event) => {
+		// 		if (event.target == dialog) {
+		// 			dialog.close()
+		// 		}
+		// 	}
+		// })
+		// linkBlocks()
 	}
 
-	// Images!
+	// Images
 	else if (block.class == 'Image') {
 		let imageItem =
 			`
 		<li class="image-block">
 		<button>
+			<img src="assets/preview.png" class="preview">
 			<figure>
 				<figcaption>${block.title}</figcaption>
 			</figure>
@@ -76,10 +97,14 @@ let renderBlock = (block) => {
 	else if (block.class == 'Text') {
 		let imageItem =
 		`
-		<li>
-			<p><em>Text</em></p>
+		<li class="image-block">
+		<button>
+			<img src="assets/preview.png" class="preview">
+		</button>
+		<dialog class="modal">
 			<p>${ block.title }</p>
-			<p>${ block.content_html }</p>
+			<p>${ block.description_html }</p>
+		</dialog>
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -96,9 +121,14 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li class="video-block">
-				<div class = "preview"></div>
-					<p>Video<</p>
+				<button>
+					<img src="assets/video.png" class="preview">
+				</button>
+				<dialog class="modal">
 					<video class="video-size" controls src="${ block.attachment.url }"></video>
+					<p>${ block.title }</p>
+					<p>${ block.description_html }</p>
+				</dialog>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -117,9 +147,15 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
-					<p><em>Audio</em></p>
+				<li class="all-blocks"
+				<button>
+					<img src="assets/preview.png" class="preview">
+				</button>
+				<dialog class="modal">
 					<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
+					<p>${ block.title }</p>
+					<p>${ block.description_html }</p>
+				</dialog>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -137,8 +173,13 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li class="video-block>"
+				<button>
+				<img src="assets/preview.png" class="preview">
+				</button>
+				<dialog class="modal">
 					<p><em>Linked Video</em></p>
 					${ block.embed.html }
+				</dialog>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
@@ -148,7 +189,6 @@ let renderBlock = (block) => {
 		// Linked audio!
 		else if (embed.includes('rich')) {
 			// …up to you!
-
 		}
 	}
 }
