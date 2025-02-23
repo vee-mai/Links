@@ -289,7 +289,7 @@ img{
 	color:var(--black);
 	padding:0.2rem;
 	margin:0.3rem;
-	background-color:var(--top-nav);
+	background-color:rgb(238 238 238);
 	border-radius:var(--border-radius-popup);
 	border:var(--popup-border);
 	cursor:pointer;
@@ -311,7 +311,7 @@ img{
 .left-nav{
 	display:flex;
 	flex-direction:row;
-	background-color:var(--top-nav);
+	background-color:rgb(141 141 141);
 	border-radius: 0px 5px 5px 0px;
 	padding-top:var(--padding-xs);
 	padding-bottom:var(--padding-xs);
@@ -479,8 +479,8 @@ h2{
 
 h3{
 	font-family:var(--secondary-font);
-	font-size:10px;
-	color:black;
+	font-size:12px;
+	color:#121212;
 }
 
 p{
@@ -543,9 +543,9 @@ p{
 }
 
 .left-nav{
-	background-color: #76acee;
 	border-radius: 0px 10px 10px 0px;
 	padding-right:1.5rem;
+	gap:15px;
 }
 
 .right-nav{
