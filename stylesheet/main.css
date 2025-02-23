@@ -244,10 +244,9 @@ img{
 }
 
 /* popup-message-01*/
-.popup-container{
+.alert-container{
 	display:flex;
 	display:none;
-
 	justify-content:center;
 	border-radius:0.2rem;
 	z-index:200;
