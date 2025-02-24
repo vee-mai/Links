@@ -1,4 +1,5 @@
 // Let Javascript know about my buttons and elements 
+let channelBlocks = document.querySelector('#channel-blocks')
 let showImageButton= document.querySelector('#pic-folder')
 let showMediaButton= document.querySelector('#media-folder')
 let showAllButton = document.querySelector('#all-folder')

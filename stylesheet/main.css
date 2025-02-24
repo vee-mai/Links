@@ -106,12 +106,8 @@ p{
 	text-align:center;
 }
 
-li{
-	width:200px;
-	height:200px;
-	gap:50px;
-	object-fit: cover;
-	overflow: hidden;
+#channel-blocks{
+	align-items: center;
 }
 
 iframe {
@@ -344,13 +340,16 @@ img{
 }
 
 .content-modal{
-	display: flex;
-	flex-direction:column;
 	background-color:var(--white);
 	width:80%;
 	top:15%;
 	left:10%;
 	border: 2px solid #121212;
+}
+
+.open-modal [open]{
+	display: flex;
+	flex-direction:column;
 }
 
 .modal-message{
@@ -409,6 +408,8 @@ img{
 
 
 @media (min-width:1280px){
+
+
 .modal-message{
 	width:auto;
 	gap:20rem;
@@ -429,7 +430,7 @@ img{
 }
 
 #popup-msg{
-	width:80vw;
+	width:70vw;
 }
 
 .popupContainer{
