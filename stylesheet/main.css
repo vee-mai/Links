@@ -460,11 +460,14 @@ img{
 	gap:12px;
 }
 
+html{
+	cursor: url('/assets/cursor.cur.png'), auto;
+}
 
 body{
 	/* background: rgb(230,200,229);
 	background: linear-gradient(90deg, rgba(230,200,229,1) 0%, rgba(255,222,254,1) 39%, rgba(215,220,255,1) 75%, rgba(195,245,255,1) 100%); */
-	cursor: url('../cursor-1.png'), auto;
+	/* cursor: url('/assets/cursor.cur.png'), auto; */
 }
 
 h1{
