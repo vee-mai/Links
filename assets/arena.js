@@ -36,9 +36,11 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li class="link-block">
+
 			<button>
 				<img src="assets/preview.png" class="preview">
 			</button>
+
 			<dialog class="content-modal">
 				<div class="modal-message">
 					<div class="modal-bar">
@@ -56,9 +58,12 @@ let renderBlock = (block) => {
 					</div>
 				</div>
 			</dialog>
+
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
+		
+		let initInteraction = () => {
 		let linkBlocks = document.querySelectorAll('.link-block')
 		linkBlocks.forEach((block) => {
 			let openButton = block.querySelector('button')
@@ -79,8 +84,9 @@ let renderBlock = (block) => {
 				}
 			}
 		})
-		linkBlocks()
 	}
+	initInteraction();
+}
 
 	// Images
 	else if (block.class == 'Image') {
@@ -283,6 +289,8 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
+
+		initInteraction();
 
 		// Also display the owner and collaborators:
 		let channelUsers = document.getElementById('channel-users') // Show them together
