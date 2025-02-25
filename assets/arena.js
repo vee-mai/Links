@@ -37,8 +37,8 @@ let renderBlock = (block) => {
 			`
 			<li class="link-block">
 
-			<button>
-				<img src="assets/preview.png" class="preview">
+			<button class="preview">
+				<img class="link-png" src="assets/link.png">
 			</button>
 
 			<dialog class="content-modal">
@@ -56,7 +56,6 @@ let renderBlock = (block) => {
 						<h4>Added By ${block.connected_by_username}</h4>
 						<p><a href="${ block.source.url }"> See the original ↗ </a></p>
 					</div>
-				</div>
 			</dialog>
 
 			</li>
@@ -102,7 +101,7 @@ let renderBlock = (block) => {
 		<dialog class="content-modal">
 				<div class="modal-message">
 					<div class="modal-bar">
-						<p>${ block.title }</p>
+						<h1 class="modal-text">${ block.title }</h1>
 					</div>
 					<div>
 						<button class="modal-close">X</button>
@@ -116,27 +115,6 @@ let renderBlock = (block) => {
 		</li>
 		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
-	// let imageItem= document.querySelectorAll('.image-block')
-	// imageBlock.forEach((block) => {
-	// 	let openButton = block.querySelector('button')
-	// 	let dialog = block.querySelector('dialog')
-	// 	let closeButton = dialog.querySelector('button')
-	
-	// 	openButton.onclick = () => {
-	// 		dialog.showModal()
-	// 	}
-	
-	// 	closeButton.onclick = () => {
-	// 		dialog.close()
-	// 	}
-	
-	// 	dialog.onclick = (event) => {
-	// 		if (event.target == dialog) {
-	// 			dialog.close()
-	// 		}
-	// 	}
-	// })
-	// imageBlocks()
 }
 
 	// Text!
@@ -161,7 +139,7 @@ let renderBlock = (block) => {
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
-
+		console.log(attachment)
 		// Uploaded videos!
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
@@ -259,7 +237,7 @@ let initInteraction = () => {
 	imageBlocks.forEach((block) => {
 		let openButton = block.querySelector('button')
 		let dialog = block.querySelector('dialog')
-		let closeButton = dialog.querySelector('button')
+		let closeButton = dialog.querySelector('button')||""
 
 		openButton.onclick = () => {
 			dialog.showModal()
