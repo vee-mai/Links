@@ -41,7 +41,7 @@
 
 	/* popup */
 	--top-nav:rgb(163, 163, 163);
-	--popup-border: 2px solid rgb(53, 53, 53);
+	--popup-border: 3.5px solid rgb(53, 53, 53);
 	--popup-bar-color:rgb(163, 163, 163);
 
 	/* icons size */
@@ -174,7 +174,7 @@ button{
 }
 
 .link-png{
-	width:13rem;
+	width:8.5rem;
 }
 
 button {
@@ -306,7 +306,7 @@ img{
 	background: rgb(2,0,36);
 	background:var(--popup-bar-color);
 	display:flex;
-	border-bottom:2px solid #121212;
+	border-bottom:3.5px solid #121212;
 }
 
 .popup-text{

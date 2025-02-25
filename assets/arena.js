@@ -39,6 +39,9 @@ let renderBlock = (block) => {
 
 			<button class="preview">
 				<img class="link-png" src="assets/link.png">
+				<figure>
+				<figcaption>Preview</figcaption>
+			</figure>
 			</button>
 
 			<dialog class="content-modal">
@@ -173,8 +176,11 @@ let renderBlock = (block) => {
 			let audioItem =
 				`
 				<li class="all-blocks"
-				<button>
-					<img src="assets/preview.png" class="preview">
+				<button class="preview">
+					<img class="link-png" src="assets/files.png">
+					<figure>
+					<figcaption>Preview</figcaption>
+					</figure>
 				</button>
 				<dialog class="modal">
 					<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
