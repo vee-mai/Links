@@ -42,9 +42,9 @@
 
 	/* popup */
 	--top-nav:rgb(163, 163, 163);
-	--popup-border: 3.5px solid #121212;
+	--popup-border: 3.2px solid #121212;
 	--popup-bar-color:rgb(163, 163, 163);
-	--close-button: 1.5px solid #121212;
+	--close-button: 3px solid #121212;
 
 	/* icons size */
 	--icons-xs:1.2rem;
@@ -301,6 +301,8 @@ iframe {
 	width:90vw;
 	border:var(--popup-border);
 	border-radius:calc(var(--border-radius-popup) + 2px);
+	height:550px;
+	overflow:auto;
 }
 
 .frame{
@@ -401,7 +403,7 @@ iframe {
 	width:80%;
 	top:15%;
 	left:10%;
-	border: 2px solid #121212;
+	border: 3.5px solid #121212;
 	height:fit-content;
 }
 
@@ -542,6 +544,7 @@ figcaption{
 
 #popup-msg{
 	width:45vw;
+	height:630px;
 }
 
 .popupContainer{

@@ -245,7 +245,7 @@ let renderBlock = (block) => {
 			// …up to you!
 			let pdfItem =
 			`
-			<li class="pdf-block"
+			<li class="pdf-block">
 			<button class="preview">
 				<img class="pdf-png" src="assets/pdf.png">
 				<figure>
@@ -257,13 +257,14 @@ let renderBlock = (block) => {
 					<div class="modal-bar">
 						<p>${ block.title }</p>
 					</div>
-				<div>
-					<button class="modal-close">X</button>
+					<div>
+						<button class="modal-close">X</button>
+					</div>
 				</div>
 				<div>
-					<p>link to download LimeWire</p>
+					<img src="${ block.image.thumb.url }">
 					<p>${ block.description_html }</p>
-				<div>
+				</div>
 			</dialog>
 			</li>
 			`
