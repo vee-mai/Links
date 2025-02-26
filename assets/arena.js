@@ -29,8 +29,6 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.getElementById('channel-blocks')
 
-	console.log('BLOCK',block)
-
 	// Links!
 	if (block.class == 'Link') {
 		let linkItem =
@@ -40,8 +38,8 @@ let renderBlock = (block) => {
 			<button class="preview">
 				<img class="link-png" src="assets/link.png">
 				<figure>
-				<figcaption>Preview</figcaption>
-			</figure>
+					<figcaption>link_preview</figcaption>
+				</figure>
 			</button>
 
 			<dialog class="content-modal">
@@ -53,14 +51,17 @@ let renderBlock = (block) => {
 						<button class="modal-close">X</button>
 					</div>
 				</div>
-					<div class="modal-contents">
+				<div class="modal-contents">
+					<div class="image-container">
 						<img class="modal-image" src="${ block.image.original.url}">
+					</div>
+					<div>
 						<p>${ block.description_html }</p>
-						<h4>Added By ${block.connected_by_username}</h4>
+						<p>Added By ${block.connected_by_username}</p>
 						<p><a href="${ block.source.url }"> See the original ↗ </a></p>
 					</div>
+				</div>
 			</dialog>
-
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -95,10 +96,10 @@ let renderBlock = (block) => {
 		let imageItem =
 			`
 		<li class="image-block">
-		<button>
-			<img src="assets/preview.png" class="preview">
+		<button class="preview">
+			<img src="assets/preview.png">
 			<figure>
-				<figcaption>Preview</figcaption>
+				<figcaption>image_preview</figcaption>
 			</figure>
 		</button>
 		<dialog class="content-modal">
@@ -110,9 +111,12 @@ let renderBlock = (block) => {
 						<button class="modal-close">X</button>
 					</div>
 				</div>
-				<div>
-					<img src="${ block.image.large.url}">
-					<p>${ block.description_html }</p>
+				<div class="modal-contents">
+					<div class="image-container">
+						<img src="${ block.image.large.url}">
+						<p>${ block.description_html }</p>
+						<p>Added By ${block.connected_by_username}</p>
+					</div>
 				</div>
 		</dialog>
 		</li>
@@ -122,44 +126,116 @@ let renderBlock = (block) => {
 
 	// Text!
 	else if (block.class == 'Text') {
-		let imageItem =
+		let textItem =
 		`
-		<li class="image-block">
-		<button>
-			<img src="assets/preview.png" class="preview">
+		<li class="text-block">
+		<button class="preview">
+			<img class="text-png" src="assets/text.png">
+			<figure>
+				<figcaption>text_preview</figcaption>
+			</figure>
 		</button>
-		<dialog class="modal">
-			<p>${ block.title }</p>
-			<p>${ block.description_html }</p>
+		<dialog class="content-modal">
+			<div class="modal-message">
+				<div class="modal-bar">
+				<p>${ block.title }</p>
+			</div>
+			<div>
+			<button class="modal-close">X</button>
+			</div>
+			<div>
+				<p>link to download LimeWire</p>
+				<p>${ block.description_html }</p>
+			<div>
 		</dialog>
 		</li>
 		`
-	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+	channelBlocks.insertAdjacentHTML('beforeend', textItem)
+	let initInteraction = () => {
+		let textItem = document.querySelectorAll('.text-block')
+		textItem.forEach((block) => {
+			let openButton = block.querySelector('button')
+			let dialog = block.querySelector('dialog')
+			let closeButton = dialog.querySelector('button')
+	
+			openButton.onclick = () => {
+				dialog.showModal()
+			}
+	
+			closeButton.onclick = () => {
+				dialog.close()
+			}
+	
+			dialog.onclick = (event) => {
+				if (event.target == dialog) {
+					dialog.close()
+				}
+			}
+		})
+	}
+	initInteraction();
 	
 	}
 	
-
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
 		let attachment = block.attachment.content_type // Save us some repetition
 		console.log(attachment)
+		
 		// Uploaded videos!
+		
 		if (attachment.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
-			let videoItem =
+			let attachment=
 				`
-				<li class="video-block">
-				<button>
-					<img src="assets/video.png" class="preview">
+				<li class="attachment-block">
+				<button class="preview">
+					<img class"attachment-png" src="assets/video.png">
+					<figure>
+					<figcaption>attachment_preview</figcaption>
+					</figure>
 				</button>
-				<dialog class="modal">
-					<video class="video-size" controls src="${ block.attachment.url }"></video>
-					<p>${ block.title }</p>
-					<p>${ block.description_html }</p>
+				<dialog class="content-modal">
+					<div class="modal-message">
+						<div class="modal-bar">
+							<h1 class="modal-text">${ block.title }</h1>
+						</div>
+						<div>
+							<button class="modal-close">X</button>
+						</div>
+					</div>
+					<div>
+						<video class="video-size" controls src="${ block.attachment.url }"></video>
+						<p>${ block.description_html }</p>
+					</div>
 				</dialog>
 				</li>
 				`
-			channelBlocks.insertAdjacentHTML('beforeend', videoItem)
+			channelBlocks.insertAdjacentHTML('beforeend',attachment)
+			let initInteraction = () => {
+				let attachment= document.querySelectorAll('.attachment-block')
+				attachment.forEach((block) => {
+					let openButton = block.querySelector('button')
+					let dialog = block.querySelector('dialog')
+					let closeButton = dialog.querySelector('button')
+			
+					openButton.onclick = () => {
+						dialog.showModal()
+					}
+			
+					closeButton.onclick = () => {
+						dialog.close()
+					}
+			
+					dialog.onclick = (event) => {
+						if (event.target == dialog) {
+							dialog.close()
+						}
+					}
+				})
+			}
+			initInteraction();
+			
 			// More on video, like the `autoplay` attribute:
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
@@ -167,7 +243,55 @@ let renderBlock = (block) => {
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
 			// …up to you!
-				
+			let pdfItem =
+			`
+			<li class="pdf-block"
+			<button class="preview">
+				<img class="pdf-png" src="assets/pdf.png">
+				<figure>
+				<figcaption>pdf_preview</figcaption>
+				</figure>
+			</button>
+			<dialog class="content-modal">
+				<div class="modal-message">
+					<div class="modal-bar">
+						<p>${ block.title }</p>
+					</div>
+				<div>
+					<button class="modal-close">X</button>
+				</div>
+				<div>
+					<p>link to download LimeWire</p>
+					<p>${ block.description_html }</p>
+				<div>
+			</dialog>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
+
+		let initInteraction = () => {
+			let pdfItem= document.querySelectorAll('.pdf-block')
+			pdfItem.forEach((block) => {
+				let openButton = block.querySelector('button')
+				let dialog = block.querySelector('dialog')
+				let closeButton = dialog.querySelector('button')
+		
+				openButton.onclick = () => {
+					dialog.showModal()
+				}
+		
+				closeButton.onclick = () => {
+					dialog.close()
+				}
+		
+				dialog.onclick = (event) => {
+					if (event.target == dialog) {
+						dialog.close()
+					}
+				}
+			})
+		}
+		initInteraction();	
 		}
 
 		// Uploaded audio!
@@ -175,22 +299,54 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li class="all-blocks"
+				<li class="audio-block">
 				<button class="preview">
 					<img class="link-png" src="assets/files.png">
 					<figure>
-					<figcaption>Preview</figcaption>
+						<figcaption>Audio_Preview</figcaption>
 					</figure>
 				</button>
-				<dialog class="modal">
-					<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
-					<p>${ block.title }</p>
-					<p>${ block.description_html }</p>
+				<dialog class="content-modal">
+					<div class="modal-message">
+						<div class="modal-bar">
+							<h1 class="modal-text">${ block.title }</h1>
+						</div>
+						<div>
+							<button class="modal-close">X</button>
+						</div>
+					</div<
+						<div>
+							<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
+							<p>${ block.description_html }</p>
+						</div>
 				</dialog>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 			// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
+			let initInteraction = () => {
+				let audioItem = document.querySelectorAll('.audio-block')
+				audioItem.forEach((block) => {
+					let openButton = block.querySelector('button')
+					let dialog = block.querySelector('dialog')
+					let closeButton = dialog.querySelector('button')
+			
+					openButton.onclick = () => {
+						dialog.showModal()
+					}
+			
+					closeButton.onclick = () => {
+						dialog.close()
+					}
+			
+					dialog.onclick = (event) => {
+						if (event.target == dialog) {
+							dialog.close()
+						}
+					}
+				})
+			}
+			initInteraction();
 		}
 	}
 
@@ -203,13 +359,28 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="video-block>"
-				<button>
-				<img src="assets/preview.png" class="preview">
+				<li class="media-block>"
+				<button class="preview">
+					<img class="media-png" src="assets/media.png">
+					<figure>
+						<figcaption>media_preview</figcaption>
+					</figure>
 				</button>
-				<dialog class="modal">
-					<p><em>Linked Video</em></p>
-					${ block.embed.html }
+
+				<dialog class="content-modal">
+					<div class="modal-message">
+						<div class="modal-bar">
+							<h1 class="modal-text">${ block.title }</h1>
+						</div>
+						<div>
+							<button class="modal-close">X</button>
+						</div>
+					</div>
+					<div class="modal-contents">
+					<div> ${ block.embed.html } </div>
+					<p>${ block.description_html }</p>
+					<p>Added By ${block.connected_by_username}</p>
+					<p><a href="${ block.source.url }"> See the original ↗ </a></p>
 				</dialog>
 				</li>
 				`
@@ -238,6 +409,7 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 	container.insertAdjacentHTML('beforeend', userAddress)
 }
 
+// image-blocks
 let initInteraction = () => {
 	let  imageBlocks = document.querySelectorAll('.image-block')
 	imageBlocks.forEach((block) => {
@@ -260,6 +432,8 @@ let initInteraction = () => {
 		}
 	})
 }
+
+
 
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
