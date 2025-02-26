@@ -190,7 +190,7 @@ let renderBlock = (block) => {
 				`
 				<li class="attachment-block">
 				<button class="preview">
-					<img class"attachment-png" src="assets/video.png">
+					<img src="assets/video.png" class"attachment-png">
 					<figure>
 					<figcaption>attachment_preview</figcaption>
 					</figure>
