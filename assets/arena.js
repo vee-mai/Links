@@ -303,7 +303,7 @@ let renderBlock = (block) => {
 				<button class="preview">
 					<img class="link-png" src="assets/files.png">
 					<figure>
-						<figcaption>Audio_Preview</figcaption>
+						<figcaption>audio_preview</figcaption>
 					</figure>
 				</button>
 				<dialog class="content-modal">
@@ -314,10 +314,11 @@ let renderBlock = (block) => {
 						<div>
 							<button class="modal-close">X</button>
 						</div>
-					</div<
+					</div>
 						<div>
-							<audio class="audio-size"controls src="${ block.attachment.url }"></audio>
-							<p>${ block.description_html }</p>
+							<img class="modal-image" src="${ block.image.original.url}">
+							<audio controls src="${ block.attachment.url }" class="audio-size"></audio>
+							<p>${ block.description_html}</p>
 						</div>
 				</dialog>
 				</li>
@@ -359,7 +360,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="media-block>"
+				<li class="media-block">
 				<button class="preview">
 					<img class="media-png" src="assets/media.png">
 					<figure>
@@ -377,21 +378,44 @@ let renderBlock = (block) => {
 						</div>
 					</div>
 					<div class="modal-contents">
-					<div> ${ block.embed.html } </div>
-					<p>${ block.description_html }</p>
-					<p>Added By ${block.connected_by_username}</p>
-					<p><a href="${ block.source.url }"> See the original ↗ </a></p>
+						<iframe ${block.embed.html} </iframe>
+						<p>${ block.description_html }</p>
+						<p>Added By ${block.connected_by_username}</p>
+						<p><a href="${ block.source.url }"> See the original ↗ </a></p>
+					<div>
 				</dialog>
 				</li>
 				`
 			channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 			// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
+			let initInteraction = () => {
+				let linkedVideoItem= document.querySelectorAll('.media-block')
+				linkedVideoItem.forEach((block) => {
+					let openButton = block.querySelector('button')
+					let dialog = block.querySelector('dialog')
+					let closeButton = dialog.querySelector('button')
+			
+					openButton.onclick = () => {
+						dialog.showModal()
+					}
+			
+					closeButton.onclick = () => {
+						dialog.close()
+					}
+			
+					dialog.onclick = (event) => {
+						if (event.target == dialog) {
+							dialog.close()
+						}
+					}
+				})
+			}
+			initInteraction();	
 		}
-
-		// Linked audio!
-		else if (embed.includes('rich')) {
-			// …up to you!
-		}
+		// // Linked audio!
+		// else if (embed.includes('rich')) {
+		// 	// …up to you!
+		// }
 	}
 }
 
