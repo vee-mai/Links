@@ -173,7 +173,7 @@ iframe {
 		display:none;
 	}
 
-	li.video-block, .audio-block, .attachment-block{
+	li.video-block, .audio-block, .attachment-block, .media-block{
 		display:block;
 	}
 }
@@ -482,7 +482,7 @@ iframe {
 		display:none;
 	}
 
-	li.video-block, .image-block ,.text-block, .link-block{
+	li.video-block, .image-block ,.text-block, .link-block, .media-block{
 		display:block;
 	}
 }
@@ -722,7 +722,7 @@ ul{
 		display:none;
 	}
 
-	li.video-block, .audio-block, .attachment-block{
+	li.video-block, .audio-block, .attachment-block, .media-block{
 		display:block;
 	}
 }
